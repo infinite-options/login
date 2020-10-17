@@ -198,8 +198,7 @@ namespace BlankApp
                     refreshToken = accessToken;
                     FacebookUserProfileAsync(accessToken);
                 }
-
-                if (!refreshToken.Equals(e.Account.Properties["access_token"]) && !accessToken.Equals(e.Account.Properties["access_token"]))
+                else if (!refreshToken.Equals(e.Account.Properties["access_token"]) && !accessToken.Equals(e.Account.Properties["access_token"]))
                 {
                     DateTime today = DateTime.Now;
                     DateTime expirationDate = today.AddDays(Constant.days);
@@ -341,8 +340,7 @@ namespace BlankApp
                          
                     GoogleUserProfileAsync(accessToken, refreshToken, e);
                 }
-
-                if (!refreshToken.Equals(e.Account.Properties["refresh_token"])&&!accessToken.Equals(e.Account.Properties["access_token"]))
+                else if (!refreshToken.Equals(e.Account.Properties["refresh_token"])&&!accessToken.Equals(e.Account.Properties["access_token"]))
                 {
                     DateTime today = DateTime.Now;
                     DateTime expirationDate = today.AddDays(Constant.days);
