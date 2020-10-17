@@ -215,11 +215,15 @@ namespace BlankApp
                 var signUpSerializedObject = JsonConvert.SerializeObject(socialSignUp);
                 var singUpContent = new StringContent(signUpSerializedObject, Encoding.UTF8, "application/json");
 
+                System.Diagnostics.Debug.WriteLine(signUpSerializedObject);
+
                 var client = new HttpClient();
                 var RDSResponse = await client.PostAsync(Constant.SignUpUrl, singUpContent);
                 var RDSMessage = await RDSResponse.Content.ReadAsStringAsync();
 
-                if(RDSResponse.IsSuccessStatusCode)
+                System.Diagnostics.Debug.WriteLine(RDSMessage);
+
+                if (RDSResponse.IsSuccessStatusCode)
                 {
                     var RDSData = JsonConvert.DeserializeObject<SignUpResponse>(RDSMessage);
 

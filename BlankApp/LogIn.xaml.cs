@@ -257,6 +257,8 @@ namespace BlankApp
             var socialLogInPostSerialized = JsonConvert.SerializeObject(socialLogInPost);
             var postContent = new StringContent(socialLogInPostSerialized, Encoding.UTF8, "application/json");
 
+            System.Diagnostics.Debug.WriteLine(socialLogInPostSerialized);
+
             var RDSResponse = await client.PostAsync(Constant.LogInUrl, postContent);
             var responseContent = await RDSResponse.Content.ReadAsStringAsync();
 

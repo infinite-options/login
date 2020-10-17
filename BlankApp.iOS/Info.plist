@@ -47,11 +47,11 @@
 			<string>Google Auth</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.97916302968-f22boafqno1dicq4a0eolpr6qj8hkvbm</string>
+				<string>com.googleusercontent.apps.736355098040-dfnf83qu5t7ocibh2iajqpiddaoe0qq9</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>com.servingfresh</string>
+	<string>com.infiniteoptions.MTYD</string>
 </dict>
 </plist>
