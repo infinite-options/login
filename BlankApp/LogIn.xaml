@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BlankApp.LogIn">
+    <StackLayout BackgroundColor="Orange">
+        <Label
+            Text = "IO"
+            TextColor = "Wheat"
+            FontSize = "100"
+            FontAttributes = "Bold"
+            HorizontalOptions = "CenterAndExpand"
+            Padding = "0,80,0,0" >
+
+        </Label>
+        <Label
+            Text = "SOLUTIONS"
+            TextColor = "Wheat"
+            FontSize = "30"
+            FontAttributes = "Bold"
+            HorizontalOptions = "CenterAndExpand">
+
+        </Label>
+        <StackLayout Padding = "30,0,30,0">
+             <Entry
+                x:Name = "userEmailAddress"
+                Placeholder = "carlos@infiniteoptions.com"
+                HorizontalTextAlignment = "Center" ></Entry>
+            <Entry
+                x:Name = "userPassword"
+                Placeholder = "password"
+                HorizontalTextAlignment = "Center" ></Entry>
+            <Button
+                x:Name = "logInButton"
+                BackgroundColor = "LightSlateGray"
+                Text = "Sign In"
+                TextColor = "Wheat"
+                FontSize = "Medium"
+                FontAttributes = "Bold"
+                Clicked = "SignInClick" ></Button>
+        </StackLayout>
+
+        <Grid Padding = "30" HeightRequest="50">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width = "*" ></ColumnDefinition>
+                <ColumnDefinition Width = "*" ></ColumnDefinition>
+                <ColumnDefinition Width = "*" ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+    
+            <ImageButton Grid.Row = "0" Grid.Column = "0" Source = "facebookIcon.png" Clicked="FacebookSignInClick" BackgroundColor="Transparent"></ImageButton>
+            <ImageButton Grid.Row = "0" Grid.Column = "1" Source = "googleIcon.png" Clicked="GoogleSignInClick" BackgroundColor="Transparent"></ImageButton>
+            <ImageButton x:Name="appleButton" Grid.Row = "0" Grid.Column = "2" Source = "appleIcon.png" Clicked="AppleSignInClick" Command = "{Binding SignInWithAppleCommand}" BackgroundColor="Transparent"></ImageButton>
+        </Grid>       
+    </StackLayout>
+</ContentPage>
