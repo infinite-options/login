@@ -40,15 +40,20 @@ namespace BlankApp.LogInClasses.Apple
                 var client = new HttpClient();
                 var socialLogInPost = new SocialLogInPost();
 
-                if(apple_token == null && apple_email == null)
+                System.Diagnostics.Debug.WriteLine("apple_token:" + apple_token);
+                System.Diagnostics.Debug.WriteLine("apple_email:" + apple_email);
+
+                if (apple_token == null && apple_email == null)
                 {
+                    System.Diagnostics.Debug.WriteLine("First time user");
+    
                     apple_token = account.Token.Substring(0, 500);
                     apple_email = account.Email;
                     AppleUserProfileAsync(apple_token, apple_email, account.Name);
                 }
-
-                if(!apple_token.Equals(account.Token) && apple_token != null)
+                else if (!apple_token.Equals(account.Token) && apple_token != null)
                 {
+                    System.Diagnostics.Debug.WriteLine("Second Time user");
                     DateTime today = DateTime.Now;
                     DateTime expirationDate = today.AddDays(Constant.days);
                     Application.Current.Properties["time_stamp"] = expirationDate;
@@ -83,6 +88,7 @@ namespace BlankApp.LogInClasses.Apple
 
         public async void AppleUserProfileAsync(string appleToken, string appleUserEmail, string userName)
         {
+            System.Diagnostics.Debug.WriteLine("LINE 95");
             var client = new HttpClient();
             var socialLogInPost = new SocialLogInPost();
 

@@ -19,7 +19,7 @@ namespace BlankApp.Droid
     [IntentFilter(
     new[] { Intent.ActionView },
     Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable },
-    DataSchemes = new[] { "com.infiniteoptions.socialloginsxamarin" },
+    DataSchemes = new[] { "com.infiniteoptions_manifestmy.space" },
     DataPath = "/oauth2redirect")]
 
     public class CustomUrlSchemeInterceptorActivity : Activity
